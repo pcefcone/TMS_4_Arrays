@@ -5,19 +5,7 @@ using System.Text.RegularExpressions;
 
 internal class Program
 {
-    /*static void BubbleSort(int[] inArray)
-    {
-        for (int i = 0; i < inArray.Length; i++)
-            for (int j = 0; j < inArray.Length - i - 1; j++)
-            {
-                if (inArray[j] > inArray[j + 1])
-                {
-                    int temp = inArray[j];
-                    inArray[j] = inArray[j + 1];
-                    inArray[j + 1] = temp;
-                }
-            }
-    }*/
+   
     private static void Main(string[] args)
     {
         Console.Write("Put number of rows: ");
@@ -39,7 +27,7 @@ internal class Program
         }
         Console.Clear();
 
-        Console.Write("Ваш массив имеет вид:");
+        Console.Write("Your array looks like:");
 
         for (int i = 0; i < row; i++)
         {
@@ -50,11 +38,11 @@ internal class Program
             }
         }
         Console.WriteLine("\nЧто вы хотите сделать с массивом? Выберите действие:" +
-            "\n1 - Найти количество положительных чисел в матрице" +
-            "\n2 - Найти количество отрицательных чисел в матрице" +
-            "\n3 - Сортировка элементов матрицы построчно (по убыванию)" +
-            "\n4 - Сортировка элементов матрицы построчно (по возрастанию)" +
-            "\n5 - Инверсия элементов матрицы построчно" +
+            "\n1 - Find the number of positive numbers in a matrix" +
+            "\n2 - Find the number of negative numbers in a matrix" +
+            "\n3 - Sorting matrix elements row by row (descending)" +
+            "\n4 - Sorting matrix elements row by row (ascending)" +
+            "\n5 - Inverting matrix elements row by row" +
             "\n6 - Exit programm");
 
 
@@ -64,7 +52,7 @@ internal class Program
         {
             case 1:
                 int countPos = 0;
-                Console.Write("Положительные элементы:");
+                Console.Write("Positive elements:");
                 for (int i = 0; i < row; i++)
                 {
                     for (int j = 0; j < col; j++)
@@ -76,11 +64,11 @@ internal class Program
                         }
                     }
                 }
-                Console.WriteLine("\nКоличество положительных элементов матрицы: " + countPos);
+                Console.WriteLine("\nNumber of positive matrix elements is: " + countPos);
                 break;
             case 2:
                 int countNeg = 0;
-                Console.Write("Отрицательные элементы:");
+                Console.Write("Negative elements:");
                 for (int i = 0; i < row; i++)
                 {
                     for (int j = 0; j < col; j++)
@@ -93,7 +81,7 @@ internal class Program
                     }
 
                 }
-                Console.WriteLine("Количество отрицательных элементов матрицы: " + countNeg);
+                Console.WriteLine("Number of negative matrix elements is: " + countNeg);
                 Console.WriteLine("Press any key!");
                 Console.ReadKey();
                 Console.WriteLine();
@@ -115,7 +103,7 @@ internal class Program
                         }
                     }
                 }
-                Console.WriteLine("Сортировка элементов матрицы построчно (по убыванию)");
+                Console.WriteLine("Sorting matrix elements row by row (descending)");
                 for (int i = 0; i < array.GetLength(0); i++)
                 {
                     for (int j = 0; j < array.GetLength(1); j++)
@@ -145,7 +133,7 @@ internal class Program
                         }
                     }
                 }
-                Console.WriteLine("Сортировка элементов матрицы построчно (по возрастанию)");
+                Console.WriteLine("Sorting matrix elements row by row (ascending)");
                 for (int i = 0; i < array.GetLength(0); i++)
                 {
                     for (int j = 0; j < array.GetLength(1); j++)
@@ -175,7 +163,7 @@ internal class Program
                         end--;
                     }
                 }
-                Console.WriteLine("Симметричное инвертирование");
+                Console.WriteLine("Inverting matrix elements row by row");
                 for (int i = 0; i < newCol; i++)
                 {
                     for (int j = 0; j < newRow; j++)
