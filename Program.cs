@@ -5,7 +5,6 @@ using System.Text.RegularExpressions;
 
 internal class Program
 {
-   
     private static void Main(string[] args)
     {
         Console.Write("Put number of rows: ");
@@ -79,7 +78,6 @@ internal class Program
                             countNeg++;
                         }
                     }
-
                 }
                 Console.WriteLine("Number of negative matrix elements is: " + countNeg);
                 Console.WriteLine("Press any key!");
@@ -183,10 +181,6 @@ internal class Program
                 break;
             default:
                 break;
-
-
-
-
         }
     }
 }
