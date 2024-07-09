@@ -5,6 +5,33 @@ using System.Text.RegularExpressions;
 
 internal class Program
 {
+    public static void PrintArray(int[,] array)
+    {
+        for (int i = 0; i < array.GetLength(0); i++)
+        {
+            Console.WriteLine();
+            for (int j = 0; j < array.GetLength(1); j++)
+            {
+                Console.Write("{0}  ", array[i, j]);
+            }
+        }
+    }
+
+    public static void PrintResultArray(int[,] array)
+    {
+        for (int i = 0; i < array.GetLength(0); i++)
+        {
+            for (int j = 0; j < array.GetLength(1); j++)
+            {
+                Console.Write(array[i, j] + " ");
+            }
+            Console.WriteLine();
+        }
+        Console.WriteLine("Press any key!");
+        Console.ReadKey();
+        Console.WriteLine();
+    }
+
     private static void Main(string[] args)
     {
         Console.Write("Put number of rows: ");
@@ -23,15 +50,8 @@ internal class Program
         }
         Console.Clear();
         Console.Write("Your array looks like:");
-
-        for (int i = 0; i < row; i++)
-        {
-            Console.WriteLine();
-            for (int j = 0; j < col; j++)
-            {
-                Console.Write("{0}  ", array[i, j]);
-            }
-        }
+        PrintArray(array);
+      
         Console.WriteLine("\nЧто вы хотите сделать с массивом? Выберите действие:" +
             "\n1 - Find the number of positive numbers in a matrix" +
             "\n2 - Find the number of negative numbers in a matrix" +
@@ -98,17 +118,7 @@ internal class Program
                     }
                 }
                 Console.WriteLine("Sorting matrix elements row by row (descending)");
-                for (int i = 0; i < array.GetLength(0); i++)
-                {
-                    for (int j = 0; j < array.GetLength(1); j++)
-                    {
-                        Console.Write(array[i, j] + " ");
-                    }
-                    Console.WriteLine();
-                }
-                Console.WriteLine("To countinue press any key!");
-                Console.ReadKey();
-                Console.WriteLine();
+                PrintResultArray(array);
                 break;
             case 4:
                 Console.WriteLine();
@@ -120,25 +130,15 @@ internal class Program
                         {
                             if (array[i, k] > array[i, k + 1])
                             {
-                                int t = array[i, k];
+                                int tempArray = array[i, k];
                                 array[i, k] = array[i, k + 1];
-                                array[i, k + 1] = t;
+                                array[i, k + 1] = tempArray;
                             }
                         }
                     }
                 }
                 Console.WriteLine("Sorting matrix elements row by row (ascending)");
-                for (int i = 0; i < array.GetLength(0); i++)
-                {
-                    for (int j = 0; j < array.GetLength(1); j++)
-                    {
-                        Console.Write(array[i, j] + " ");
-                    }
-                    Console.WriteLine();
-                }
-                Console.WriteLine("To countinue press any key!");
-                Console.ReadKey();
-                Console.WriteLine();
+                PrintResultArray(array);
                 break;
             case 5:
                 int newRow = array.GetLength(0);
@@ -158,18 +158,7 @@ internal class Program
                     }
                 }
                 Console.WriteLine("Inverting matrix elements row by row");
-                for (int i = 0; i < newCol; i++)
-                {
-                    for (int j = 0; j < newRow; j++)
-                    {
-                        Console.Write(array[i, j] + " ");
-                    }
-                    Console.WriteLine();
-                }
-
-                Console.WriteLine("Press any key!");
-                Console.ReadKey();
-                Console.WriteLine();
+                PrintResultArray(array);               
                 break;
             case 6:
                 Console.WriteLine("Good bye! Press any key!");
