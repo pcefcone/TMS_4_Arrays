@@ -13,9 +13,6 @@ internal class Program
         int col = int.Parse(Console.ReadLine());
         int[,] array = new int[row, col];
 
-
-
-
         for (int i = 0; i < row; i++)
         {
             for (int j = 0; j < col; j++)
@@ -25,7 +22,6 @@ internal class Program
             }
         }
         Console.Clear();
-
         Console.Write("Your array looks like:");
 
         for (int i = 0; i < row; i++)
